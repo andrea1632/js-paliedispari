@@ -6,16 +6,13 @@ while ( numeroInput < 1 || numeroInput > 5){
     numeroInput = parseInt(prompt("attenzione, il numero deve essere compreso tra 1 e 5"))
 }
 //funzione numeri random
-var numRandom = 0;
+var numRandom;
 function randomGenerator (numRandom){
     numRandom = Math.floor(Math.random()*5 +1);
     return numRandom;
 }
-
-let somma = numeroInput + randomGenerator(numRandom);
-console.log(somma)
-console.log(numeroInput)
-console.log(randomGenerator(numRandom))
+let randomNumber = randomGenerator(numRandom)
+let somma = numeroInput + randomNumber;
 
 //funzione per stabilire se la somma dei numeri è pari o dispari
 
@@ -28,4 +25,4 @@ function pariDispari(){
         return content.innerHTML += `mi dispiace, il numero ${somma} non è ${pariOdispariInput} hai perso!`
     }
 }
-content.innerHTML += `${pariDispari()} <div>il numero generato automaticamente dal pc è ${randomGenerator(numRandom)}</div><div>${somma} ${numeroInput}</div>`
+content.innerHTML += `${pariDispari()} <div>il numero generato automaticamente dal pc è ${randomNumber}</div><div>il numero scelto da te è :${numeroInput}</div>`
